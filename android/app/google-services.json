@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "283663016592",
+    "project_id": "rockske8er-helpdesk",
+    "storage_bucket": "rockske8er-helpdesk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283663016592:android:fe7f3a83479e539988ee15",
+        "android_client_info": {
+          "package_name": "com.helpdesk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283663016592-c3gte1h1apf7cp1th7387gk6kpukjrel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApF1paCUc46cIZt9XbCAWGFrsvttZ6iUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283663016592-c3gte1h1apf7cp1th7387gk6kpukjrel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
