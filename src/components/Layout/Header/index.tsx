@@ -2,9 +2,13 @@ import React from 'react';
 
 import { LogoutButton } from '@components/Controllers/LogoutButton';
 import { Container, Greeting, Title, SubTitle } from './styles';
+import auth from '@react-native-firebase/auth'
 
 export function Header() {
-  function handleSignOut() { }
+  function handleSignOut() { 
+    auth()
+      .signOut()
+  }
 
   return (
     <Container>

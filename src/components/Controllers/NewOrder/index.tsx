@@ -1,5 +1,10 @@
 import React, { useRef } from 'react';
-import { BottomSheetView, BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { 
+  BottomSheetView, 
+  BottomSheetModal,
+  BottomSheetModalProvider
+
+} from '@gorhom/bottom-sheet';
 
 import { Background } from './styles';
 import { Button } from '@components/Controllers/Button';
@@ -19,7 +24,7 @@ export function NewOrder() {
       <BottomSheetModalProvider>
         <BottomSheetModal
           ref={bottomSheetRef}
-          snapPoints={['50%']}
+          snapPoints={['60%']}
           style={{ padding: 24 }}
           enablePanDownToClose={true}
           backdropComponent={() => <Background />}

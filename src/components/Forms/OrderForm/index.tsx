@@ -1,24 +1,56 @@
 import React, { useState } from 'react';
+import firestore from '@react-native-firebase/firestore'
 
 import { Form, Title } from './styles';
 import { Input } from '@components/Controllers/Input';
 import { Button } from '@components/Controllers/Button';
 import { TextArea } from '@components/Controllers/TextArea';
+import { Alert } from 'react-native';
 
 export function OrderForm() {
   const [patrimony, setPatrimony] = useState('');
+  const [equipment, setEquipment] = useState('');
   const [description, setDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   function handleNewOrder() {
     setIsLoading(true);
+    firestore()
+      .collection('orders')
+      .add({
+        patrimony,
+        description,
+        equipment,
+        status: 'open',
+        created_at: firestore.FieldValue.serverTimestamp()
+      })
+      .then(()=> Alert.alert('Chamado', 'Aberto com Sucesso'))
+      .catch(e => {
+        console.log(e)
+        setIsLoading(false)
+      })
+      .finally(() => setIsLoading(false))
   }
 
   return (
     <Form>
+
       <Title>Novo chamado</Title>
-      <Input placeholder="Número do Patrimônio" onChangeText={setPatrimony} />
-      <TextArea placeholder="Descrição" onChangeText={setDescription} />
+      
+      <Input 
+        placeholder="Nome do Equipamento" 
+        onChangeText={setEquipment} 
+      />
+
+      <Input 
+        placeholder="Número do Patrimônio"
+        onChangeText={setPatrimony} 
+      />
+
+      <TextArea 
+        placeholder="Descrição" 
+        onChangeText={setDescription} 
+      />
 
       <Button title="Enviar chamado" isLoading={isLoading} onPress={handleNewOrder} />
     </Form>
